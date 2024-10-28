@@ -1,0 +1,97 @@
+body {
+    background-color: lightsteelblue;
+    font-family: Cambria, system-ui;
+}
+
+.menu {
+    z-index: 1;
+    border-bottom: 0.08em solid #946339;
+    border-radius: 0 0 0 2em;
+    background-color: #d97e28;
+    padding: 0 0.6em 0 1em;
+}
+
+.menu img {
+    height: 0.9em;
+}
+
+a{
+    color: bisque;
+}
+
+a:hover {
+    color: white;
+    background-color: #de8533;
+}
+
+hr {
+    border: solid #d97e28;
+}
+
+.office {
+    border: 0.3em ridge #d97e28;
+    margin: 3%;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 20%;
+}
+
+.card-body{
+    background-image: linear-gradient(to bottom, bisque, lightsteelblue);
+}
+
+.card-body ul li {
+    list-style-position: inside;
+    border-bottom: 0.01em solid #d97e28;
+}
+
+
+
+h2, h3, h4, h5, .card-title {
+    scroll-margin-top: 0.5em;
+    font-style: italic;
+    background-image: linear-gradient(to left, #644525, #ff9e42);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.01em #3f2b18;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 4em;
+}
+
+h3 {
+    font-size: 3em;
+}
+
+h4{
+    font-size: 1.5em;
+}
+
+.btn-primary{
+    --bs-btn-bg: #d97e28;
+    --bs-btn-border-color: #946339;
+    --bs-btn-hover-bg: #de8533;
+    --bs-btn-hover-border-color: #946339;
+}
+
+.username, .userbody{
+    line-height: 1em;
+}
+.timestamp {
+    font-size: 0.5em;
+    line-height: 0.5em;
+}
+
+@media (max-width: 650px) {
+    h2 {
+        font-size: 12vw;
+    }
+}

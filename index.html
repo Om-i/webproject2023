@@ -1,0 +1,142 @@
+<!--Create a 'Comment' form which allows visitors to leave comments on the web app. You can choose
+re-use a web page from a previous assignment or create a new one -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <!-- css loaded after to allow overriding bootstrap defaults -->
+    <link rel="stylesheet" href="style.css">
+    <title>Technosoft SaaS (Educational website)</title>
+</head>
+<!-- Use Bootstrap classes to style all the content on the page. You can also mix in your CSS
+classes and styles -->
+<body class="mt-5 p-5 fs-5">
+<div class="menu position-fixed top-0 end-0 fs-1">
+
+    <ul class="d-flex justify-content-around list-unstyled text-center my-0">
+        <li><a href="#home" class="text-decoration-none px-3 rounded-pill">Home</a></li>
+        <li><a href="#pricing" class="text-decoration-none px-3 rounded-pill">Pricing</a>
+        </li>
+        <li><a href="#comments"
+               class="text-decoration-none px-3 rounded-pill">Comments</a>
+        </li>
+        <li><img src="cloud.png" class="img-fluid" alt="cloud symbol"></li>
+    </ul>
+</div>
+
+<h6 class="text-center"><em><strong>Disclaimer: </strong> This website is created for educational
+    purposes only.
+    It is in no way affiliated with any real business, organization, or entity. The content
+    provided here is entirely fictional.</em>
+</h6>
+
+<h2 id="home" class="text-center overflow-hidden"><strong>TECHNOSOFT</strong></h2>
+<hr>
+<section class="d-flex justify-content-around align-items-center">
+    <br>
+    <p class="px-4 text-justify">
+        Welcome to the world of TechnoSoft, the friendly neighborhood SaaS company! Our
+        cutting-edge software solutions are designed to revolutionize your business operations
+        and take you to new heights of success. TechnoSoft provides scalable and customizable SaaS
+        solutions that empower businesses to
+        streamline their operations, boost productivity, and achieve sustainable growth.
+    </p>
+    <img class="office img-fluid rounded-circle d-none d-lg-block" src="offices.jpg" alt="office building">
+</section>
+
+<hr>
+
+<h3 id="pricing" class="text-center">Pricing</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h4 class="card-title text-center">€9.00 per month</h4>
+                    <ul class="list-unstyled px-4">
+                        <li class="d-flex justify-content-between"><span>Access to all basic features</span><span>✅</span>
+                        </li>
+                        <li class="d-flex justify-content-between"><span>Advanced analytics and reporting</span><span>✅</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Enhanced security features</span><span>✅</span></li>
+                        <li class="d-flex justify-content-between">
+                            <span>Priority customer support</span><span>✅</span></li>
+                        <li class="d-flex justify-content-between"><span>Custom templates and designs</span><span>✅</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h4 class="card-title text-center">€0.00 per month</h4>
+                    <ul class="list-unstyled px-4">
+                        <li class="d-flex justify-content-between"><span>Access to all basic features</span><span>✅</span>
+                        </li>
+                        <li class="d-flex justify-content-between"><span>Advanced analytics and reporting</span><span>❌</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Enhanced security features</span><span>❌</span></li>
+                        <li class="d-flex justify-content-between">
+                            <span>Priority customer support</span><span>❌</span></li>
+                        <li class="d-flex justify-content-between"><span>Custom templates and designs</span><span>❌</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+
+<h3 id="comments" class="text-center">Comments</h3>
+<div class="container">
+    <!-- Use the grid classes in Bootstrap to ensure that the comments display as intended on
+    different viewport sizes -->
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <form id="commentForm" onsubmit="event.preventDefault();submitForm();">
+                <div class="form-group">
+                    <label for="userHandle">Username</label>
+                    <!-- Create a simple form with a textbox <input> tag where the user can type
+                    in their handle (e.g. @myuser) -->
+                    <input type="text" class="form-control" id="userHandle" placeholder="@myuser">
+                </div>
+                <div class="form-group">
+                    <label for="userComment">Comment</label>
+                    <!-- and a text area where their comment text can be inserted -->
+                    <textarea class="form-control" id="userComment" rows="3" placeholder="Type here..."></textarea>
+                </div>
+                <!-- A button to “post” comments should be placed below these.-->
+                <!-- When the “post” button is clicked, a JavaScript event handler should handle the onClick event -->
+                <button type="button" onclick="submitForm()" class="btn btn-primary my-1">Post</button>
+            </form>
+        </div>
+        <div class="col-lg-6 col-md-12" id="commentSection"></div>
+        <!-- empty card used as template for js -->
+        <div class="commentCard d-none">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="input1"></h5>
+                    <p class="input2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- js called after complete page load -->
+<script src="comment.js"></script>
+</body>
+</html>
